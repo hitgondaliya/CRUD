@@ -1,0 +1,36 @@
+<h3>Duration</h3>
+<div class="mb50">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputText1" class="form-label">Name</label>
+      <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp" [(ngModel)]="durationObj.name" [ngModelOptions]="{standalone: true}" >
+      <div id="textlHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Duration</label>
+      <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="durationObj.duration"  [ngModelOptions]="{standalone: true}">
+      <div id="emailHelp" class="form-text">We'll never share your duration with anyone else.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSignUp()" routerLink="/membership">Submit</button>
+  </form>
+</div>
+<table class="table container">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Name</th>
+      <th scope="col" style="text-align: end;">Duration</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categoryData;">
+      <td>{{category.id}}</td>
+      <td>{{category.name}}</td>
+      <td class="h11">{{category.duration}} Days</td>
+      <td><button class="btn bg-danger" (click)="onDelete(category)"
+        style="margin-right: 10px; color: white;">Delete</button>
+      <button class="btn bg-primary" (click)="onEdit(category)" style="color: white;">Edit</button>
+    </td>
+    </tr>
+  </tbody>
+</table>

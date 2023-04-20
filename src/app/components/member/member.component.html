@@ -1,0 +1,73 @@
+<h3>Member</h3>
+<div class="mb50">
+  <form>
+    <div class="mb-3">
+      <label for="exampleInputText1" class="form-label">First Name</label>
+      <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp" [(ngModel)]="memberObj.firstName" [ngModelOptions]="{standalone: true}">
+      <div id="textlHelp" class="form-text">We'll never share your name with anyone else.</div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputText1" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="exampleInputText1" aria-describedby="textHelp" [(ngModel)]="memberObj.lastName" [ngModelOptions]="{standalone: true}">
+        <div id="textlHelp" class="form-text">We'll never share your name with anyone else.</div>
+      </div>
+      <div class="mb-3">
+        <label for="exampleInputTexteee" class="form-label">Age</label>
+        <input type="number" class="form-control" id="exampleInputTexteee" aria-describedby="textHelp" [(ngModel)]="memberObj.age" [ngModelOptions]="{standalone: true}">
+        <div id="textlHelp" class="form-text">We'll never share your age with anyone else.</div>
+      </div>
+    <div class="mb-3">
+      <div class="mb-3 hij">
+        <label for="selectedValue">Category</label>
+        <select id="selectedValue" [(ngModel)]="memberObj.category1" [ngModelOptions]="{standalone: true}">
+          <option *ngFor="let category of categoryData10;">{{category.category}}</option>
+        </select>
+        <div class="mb-3 hij">
+          <label for="selectedValue">MemberShip</label>
+          <select id="selectedValue" [(ngModel)]="memberObj.memberShip" [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let category of categoryData10;">{{category.Name}}</option>
+          </select>
+        </div>
+        <div class="mb-3 hij">
+          <label for="selectedValue">Duration</label>
+          <select id="selectedValue" [(ngModel)]="memberObj.duration"  [ngModelOptions]="{standalone: true}">
+            <option *ngFor="let category of categoryData10;" [value]="category.duration + 365">{{category.duration + 365}} Days</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+    <button type="submit" class="btn btn-primary"  (click)="onSignUp()">Submit</button>
+
+  </form>
+</div>
+<table class="table container">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">firstName</th>
+      <th scope="col">lastName</th>
+      <th scope="col">Age</th>
+      <th scope="col">Category</th>
+      <th scope="col">MemberShip</th>
+      <th scope="col" class="h11">Duration</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let category of categoryData100;">
+      <td>{{category.id}}</td>
+      <td>{{category.firstName}}</td>
+      <td>{{category.lastName}}</td>
+      <td>{{category.age}} Years</td>
+      <td>{{category.category1}}</td>
+      <td>{{category.memberShip}}</td>
+      <td class="h11">{{category.duration}} Days</td>
+      <td><button class="btn bg-danger" (click)="onDelete(category)"
+        style="margin-right: 10px; color: white;">Delete</button>
+      <button class="btn bg-primary" (click)="onEdit(category)" style="color: white;">Edit</button>
+    </td>
+
+    </tr>
+  </tbody>
+</table>

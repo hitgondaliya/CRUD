@@ -1,0 +1,31 @@
+.mb50 {
+    display: flex;
+    justify-content: center;
+    
+}
+h3 {
+    text-align: center;
+}
+.nav-item {
+    list-style: none;
+    border: 2px solid black;
+    margin-bottom: 20px;
+    padding: 8px;
+}
+.hij {
+    display: grid;
+}
+select {
+    padding: 8px;
+    border-radius: 5px;
+}
+label {
+    margin-bottom: 10px;
+}
+.table {
+    margin-top: 70px;
+    /* text-align: center; */
+}
+.h11 {
+    text-align: end;
+}
